@@ -1,0 +1,5 @@
+// "ben sen o" > char * > split ' ' > striteri strmap büyüt > fd alt alta yaz
+
+// unsigned int x = 3000000000 > int y = 5 > y nin içine 4242 yaz memset
+
+// int a; > baytlarına 'asli'
