@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozcan <eozcan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eozcan <eozcan@student.42istanbul.com.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:14:08 by eozcan            #+#    #+#             */
-/*   Updated: 2025/07/07 16:55:21 by eozcan           ###   ########.fr       */
+/*   Updated: 2025/07/10 05:06:16 by eozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,22 @@ char	*ft_itoa(int n)
 	char			*s;
 	long int		len;
 	unsigned int	number;
-
-	if (n == -2147483648)
-		return ("-2147483648");
-	else
+	
+	len = ft_len(n);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (s == NULL)
+		return (NULL);
+	s[len--] = '\0';
+	if (n == 0)
+		s[0] = '0';
+	if (n < 0)
 	{
-		len = ft_len(n);
-		s = (char *)malloc(sizeof(char) * (len + 1));
-		if (s == NULL)
-			return (NULL);
-		s[len--] = '\0';
-		if (n == 0)
-			s[0] = '0';
-		if (n < 0)
-		{
-			number = n * -1;
-			s[0] = '-';
-		}
-		else
-			number = n;
-		s = ft_char(s, number, len);
-		return (s);
+		number = n * -1;
+		s[0] = '-';
 	}
+		else
+		number = n;
+	s = ft_char(s, number, len);
+	return (s);
+	
 }

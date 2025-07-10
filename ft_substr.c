@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozcan <eozcan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eozcan <eozcan@student.42istanbul.com.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:12:06 by eozcan            #+#    #+#             */
-/*   Updated: 2025/07/07 16:53:58 by eozcan           ###   ########.fr       */
+/*   Updated: 2025/07/10 05:02:09 by eozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (0);
 	slen = ft_strlen(s);
+	if (start >= slen)
+		return (ft_strdup(""));
 	if (start < slen)
 		finish = slen - start;
 	if (finish > len)

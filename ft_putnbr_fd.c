@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozcan <eozcan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eozcan <eozcan@student.42istanbul.com.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:17:44 by eozcan            #+#    #+#             */
-/*   Updated: 2025/07/07 16:36:57 by eozcan           ###   ########.fr       */
+/*   Updated: 2025/07/10 04:54:53 by eozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nbr >= 10)
 	{
-		ft_putchar_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr / 10, fd);
 		ft_putchar_fd((nbr % 10) + '0', fd);
 	}
 	else

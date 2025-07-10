@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozcan <eozcan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eozcan <eozcan@student.42istanbul.com.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:18:26 by eozcan            #+#    #+#             */
-/*   Updated: 2025/07/07 16:37:09 by eozcan           ###   ########.fr       */
+/*   Updated: 2025/07/10 05:11:31 by eozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	void	*array;
 
-	array = (void *)malloc(num * size);
-	if (array == NULL)
-		return (NULL);
+	array = malloc(num * size);
+	if (!array)
+		return(NULL);
 	ft_bzero(array, (num * size));
 	return (array);
 }
