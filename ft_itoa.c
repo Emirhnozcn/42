@@ -6,7 +6,7 @@
 /*   By: eozcan <eozcan@student.42istanbul.com.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:14:08 by eozcan            #+#    #+#             */
-/*   Updated: 2025/07/10 05:06:16 by eozcan           ###   ########.fr       */
+/*   Updated: 2025/07/10 05:54:17 by eozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,24 @@ char	*ft_char(char *s, unsigned int number, long int len)
 	}
 	return (s);
 }
+char	*min_int(void)
+{
+	char	*min_int;
 
+	min_int = (char *)malloc(sizeof(char) * 12); 
+	if (!min_int)
+		return (NULL);
+	ft_strlcpy(min_int, "-2147483648", 12);
+	return (min_int);
+}
 char	*ft_itoa(int n)
 {
 	char			*s;
 	long int		len;
 	unsigned int	number;
 	
+	if (n == -2147483648)
+		return (min_int());
 	len = ft_len(n);
 	s = (char *)malloc(sizeof(char) * (len + 1));
 	if (s == NULL)
@@ -59,5 +70,4 @@ char	*ft_itoa(int n)
 		number = n;
 	s = ft_char(s, number, len);
 	return (s);
-	
 }
